@@ -3,6 +3,8 @@
   \coordinate [label=right:$B$] (B) at (1.25,0.25);
   \draw (A) -- (B);
 
-  \node [draw,circle through=(B),label=left:$D$] at (A) {};
-  \node [draw,circle through=(A),label=right:$E$] at (B) {};
+  \node [draw,circle through=(B),label=left:$D$]
+    at (A) {};
+  \node [draw,circle through=(A),label=right:$E$]
+    at (B) {};
 \end{tikzpicture}

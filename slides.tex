@@ -118,10 +118,16 @@
     \end{column}
   \end{columns}
 
+  \small
   \begin{enumerate}
-    \item we konden ook \mint{latex}|\draw[blue] (0,0) -- (1.25,0.25);| gebruiken, maar nu kunnen we de co\"ordinaten herbruiken
-    \item\pause hoe voegen we namen toe?
+    \item\pause \mintinline{latex}|\draw| is het commando om iets te tekenen
+    \item\pause \mintinline{latex}|--| is een gewone lijn
+    \item\pause we konden ook \mintinline{latex}|\draw[blue] (0,0) -- (1.25,0.25);| gebruiken, maar nu kunnen we de co\"ordinaten herbruiken
   \end{enumerate}
+  \pause
+  \begin{block}{Volgende stap}
+    Hoe voegen we namen van punten toe?
+  \end{block}
 \end{frame}
 
 \begin{frame}
@@ -136,11 +142,15 @@
     \end{column}
   \end{columns}
 
+  \small
   \begin{enumerate}
-    \item in tegenstelling tot gewone \LaTeX\ moeten we hier puntkomma's gebruiken om het einde van een regel aan te duiden
-    \item we mogen nieuwe regels beginnen als dat beter leest (of als de slides te smal zijn)
-    \item\pause hoe kunnen we $A$ en $B$ een willekeurige positie laten aannemen?
+    \item\pause we gebruiken puntkomma's voor het einde van een commando
+    \item\pause we mogen nieuwe regels beginnen als dat beter leest (of als de slides te smal zijn)
   \end{enumerate}
+  \pause
+  \begin{block}{Volgende stap}
+    Hoe kunnen we $A$ en $B$ een willekeurige positie laten aannemen?
+  \end{block}
 \end{frame}
 
 \begin{frame}
@@ -155,11 +165,15 @@
     \end{column}
   \end{columns}
 
+  \small
   \begin{enumerate}
-    \item we kunnen dus berekeningen doen bij het bepalen van co\"ordinaten
-    \item \texttt{rand} is een functie die een getal tussen $-1$ en $1$ teruggeeft
-    \item\pause we hebben basispunten en een perturbatie, maar dit is onduidelijk
+    \item\pause we kunnen dus berekeningen doen bij het bepalen van co\"ordinaten
+    \item\pause \texttt{rand} is een functie die een getal tussen $-1$ en $1$ teruggeeft
   \end{enumerate}
+  \pause
+  \begin{block}{Volgende stap}
+    We hebben basispunten en een perturbatie, maar de syntax is een beetje onduidelijk.
+  \end{block}
 \end{frame}
 
 \begin{frame}
@@ -174,10 +188,15 @@
     \end{column}
   \end{columns}
 
+  \small
   \begin{enumerate}
-    \item de library \texttt{calc} laat ons toe om heel flexibel met co\"ordinaten te rekenen: we gebruiken dollartekens om dit aan te duiden
-    \item meestal is \texttt{calc} zelfs niet nodig (!)
+    \item\pause de library \texttt{calc} laat ons toe om heel flexibel met co\"ordinaten te rekenen: we gebruiken dollartekens om dit aan te duiden
+    \item\pause meestal is \texttt{calc} zelfs niet nodig (!)
   \end{enumerate}
+  \pause
+  \begin{block}{Volgende stap}
+    Nu de cirkels.
+  \end{block}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -192,12 +211,16 @@
     \end{column}
   \end{columns}
 
-  \begin{enumerate} % TODO mintinline?
-    \item we berekenen de co\"ordinaten voor $B-A$: \mint{latex}|let \p1 = ($ (B) - (A) $)|
-    \item we berekenen de straal van de cirkel en tekenen hem:
-      \mint{latex}|\draw (0,0) circle (1);|
-    \item\pause nu nog de tweede cirkel
+  \small
+  \begin{enumerate}
+    \item\pause een cirkel tekenen
+      \mintinline{latex}|\draw (0,0) circle (1);|
+    \item\pause we berekenen de co\"ordinaten voor $B-A$ (\texttt{let \ldots\ in} is met variabelen werken)
   \end{enumerate}
+  \pause
+  \begin{block}{Volgende stap}
+    Nu nog de tweede cirkel.
+  \end{block}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -212,10 +235,15 @@
     \end{column}
   \end{columns}
 
+  \small
   \begin{enumerate}
-    \item \mint{latex}|\p1| zijn co\"ordinaten, \mint{latex}|\n1| is een getal
-    \item\pause we kunnen echter ook \TikZ automatisch een cirkel door een punt laten tekenen, met de \texttt{through} library
+    \item\pause \mintinline{latex}|\p1| zijn co\"ordinaten, \mintinline{latex}|\n1| is een getal
+    \item\pause \'e\'en \mintinline{latex}|\draw| kan meerdere zaken tekenen
   \end{enumerate}
+  \pause
+  \begin{block}{Volgende stap}
+    We kunnen echter ook cirkels door punten tekenen, met de \texttt{through} library.
+  \end{block}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -230,10 +258,15 @@
     \end{column}
   \end{columns}
 
-  \begin{enumerate} % TODO mintinline
-    \item \mint{latex}|\node| is een combinatie van \mint{latex}|\coordinate| en \mint{latex}|\draw|
-    \item de lege accolades zouden gebruikt kunnen worden voor een tekst (= de node)
+  \small
+  \begin{enumerate}
+    \item \mintinline{latex}|\node| is een combinatie van \mintinline{latex}|\coordinate| en \mintinline{latex}|\draw|
+    \item de lege accolades zouden gebruikt kunnen worden voor tekst
   \end{enumerate}
+  \pause
+  \begin{block}{Volgende stap}
+    Het snijpunt bepalen.
+  \end{block}
 \end{frame}
 
 \begin{frame}
@@ -252,8 +285,8 @@
 \begin{frame}[fragile]
   \frametitle{Euclides: het snijpunt (2)}
 
-  \begin{enumerate} % TODO mintinline
-    \item we berekenen een \mint{latex}|\path| (= een reeks lijnsegmenten), dus in dit geval het (unieke) lijnstuk tussen de doorsnedes
+  \begin{enumerate} 
+    \item we berekenen een \mintinline{latex}|\path| (= een reeks lijnsegmenten), dus in dit geval het (unieke) lijnstuk tussen de doorsnedes
     \item we hebben de variabelen \texttt{intersection-1} en \texttt{intersection-2} die aangemaakt woren door de \texttt{intersections} library
     \item we introduceren de naam \texttt{C} en tekenen twee lijnstukken
   \end{enumerate}
@@ -296,6 +329,10 @@
 
   \centering
   \input{tikz/triangle/result.tikz}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Herhaling belangrijke commando's}
 \end{frame}
 
 \end{document}
