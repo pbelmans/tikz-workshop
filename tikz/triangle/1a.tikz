@@ -1,5 +1,6 @@
 \begin{tikzpicture}
   \coordinate (A) at (0,0);
   \coordinate (B) at (1.25,0.25);
+
   \draw[blue] (A) -- (B);
 \end{tikzpicture}

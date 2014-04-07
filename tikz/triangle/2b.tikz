@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+  \coordinate [label=left:$A$]  (A) at (0,0);
+  \coordinate [label=right:$B$] (B) at (1.25,0.25);
+  \draw (A) -- (B);
+
+  \draw let \p1 = ($ (B) - (A) $),
+            \n2 = {veclen(\x1,\y1)}
+        in
+          (A) circle (\n2)
+          (B) circle (\n2);
+\end{tikzpicture}
