@@ -1,0 +1,106 @@
+\documentclass[]{beamer}
+\usetheme{UniversiteitGent}
+
+\usepackage{minted}
+\usepackage{pgfplots}
+
+\pgfplotsset{width = 7cm, compat = 1.8}
+\usetikzlibrary{decorations.markings, snakes, trees}
+
+\def\Point{36.9}
+
+\begin{document}
+\begin{frame}
+  \frametitle{Inleiding}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Wat gaan we vandaag leren?}
+\end{frame}
+
+\section{Voorbeelden}
+
+\begin{frame}
+  \frametitle{\url{http://TeXample.net}}
+
+  \begin{columns}
+    \begin{column}{.4\textwidth}
+      \begin{enumerate}
+        \item 350+ voorbeelden
+        \item gesorteerd in categorie\"en
+        \item bestaat al 8 jaar
+        \item heeft ook een lijst van interessante \LaTeX\ blogs
+      \end{enumerate}
+    \end{column}
+
+    \begin{column}{.6\textwidth}
+      \begin{flushright}
+        \input{tikz/title-graphics.tikz}
+      \end{flushright}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{\url{http://PGFPlots.net}}
+
+  \begin{columns}
+    \begin{column}{.4\textwidth}
+      \begin{enumerate}
+        \item 50+ voorbeelden
+        \item gesorteerd in categorie\"en
+        \item bestaat nu een maand
+      \end{enumerate}
+    \end{column}
+
+    \begin{column}{.6\textwidth}
+      \begin{flushright}
+        \input{tikz/spiral.tikz}
+      \end{flushright}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\section{PGF/TikZ}
+
+\begin{frame}
+  \frametitle{Een uitgewerkt voorbeeld: een gelijkzijdige driehoek}
+
+  In de \emph{Elementen van Euclides} (3e eeuw voor Christus) worden vele constructies in vlakke meetkunde beschreven. We gaan nu een voorbeeld uit de Ti\textit{k}Z manual bespreken:
+  \begin{quote}
+    Hoe construeren we een gelijkzijdige driehoek op een gegeven lijnstuk?
+  \end{quote}
+  %\input{tikz/triangle/result.tikz}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Euclides: de configuratie}
+
+  \begin{columns}
+    \begin{column}{.6\textwidth}
+      \inputminted[fontsize = \scriptsize]{latex}{tikz/triangle/configuration.tikz}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      \emph{geen output}
+    \end{column}
+  \end{columns}
+
+  \TikZ bevat vele libraries die bepaalde zaken gemakkelijker maken. In dit voorbeeld zullen we er vier gebruiken.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Euclides: de rechte $AB$}
+
+  \begin{columns}
+    \begin{column}{.6\textwidth}
+      \inputminted[fontsize = \scriptsize]{latex}{tikz/triangle/1a.tikz}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      \input{tikz/triangle/1a.tikz}
+    \end{column}
+  \end{columns}
+
+
+\end{frame}
+
+\end{document}
