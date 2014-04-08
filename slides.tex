@@ -1,8 +1,12 @@
 \documentclass[]{beamer}
-\usetheme{UniversiteitGent}
+\usetheme[framenumber,totalframenumber]{UniversiteitGent}
 
+
+
+\usepackage{manfnt}
 \usepackage{minted}
 \usepackage{pgfplots}
+\usepackage{tikz-cd}
 \usepackage{xspace}
 
 \pgfplotsset{width = 7cm, compat = 1.8}
@@ -18,7 +22,26 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Wat gaan we vandaag leren?}
+  \frametitle{Wat gaan we vandaag vooral \emph{niet} doen?}
+
+  Dit is \emph{geen} grondige \TikZ-cursus:
+  \begin{enumerate}
+    \item ik ben verre van een expert
+    \item de tijd is beperkt
+    \item \TikZ is \emph{gigantisch}
+    \item\pause ik ben verre van een expert
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Wat gaan we vandaag dan \emph{wel} doen?}
+
+  \begin{enumerate}
+    \item korte introductie tot de syntax
+    \item waar kunnen we informatie vinden?
+    \item wat is er allemaal mogelijk?
+  \end{enumerate}
+  Ik wil dus vooral laten zien \emph{wat} er mogelijk is, niet \emph{hoe} je het moet doen. Daarvoor dienen handleidingen en de vele beschikbare voorbeelden.
 \end{frame}
 
 \section{Voorbeelden}
@@ -38,7 +61,7 @@
 
     \begin{column}{.6\textwidth}
       \begin{flushright}
-        %\input{tikz/title-graphics.tikz}
+        \input{tikz/title-graphics.tikz}
       \end{flushright}
     \end{column}
   \end{columns}
@@ -58,7 +81,7 @@
 
     \begin{column}{.6\textwidth}
       \begin{flushright}
-        %\input{tikz/spiral.tikz}
+        \input{tikz/spiral.tikz}
       \end{flushright}
     \end{column}
   \end{columns}
@@ -67,7 +90,7 @@
 \section{PGF/TikZ}
 
 \begin{frame}
-  \frametitle{Een uitgewerkt voorbeeld: een gelijkzijdige driehoek}
+  \frametitle{Uitgewerkt voorbeeld: een gelijkzijdige driehoek}
 
   In de \emph{Elementen van Euclides} (3e eeuw voor Christus) worden vele constructies in vlakke meetkunde beschreven. We gaan nu een voorbeeld uit de Ti\textit{k}Z manual bespreken:
   \begin{quote}
@@ -121,7 +144,7 @@
   \small
   \begin{enumerate}
     \item\pause \mintinline{latex}|\draw| is het commando om iets te tekenen
-    \item\pause \mintinline{latex}|--| is een gewone lijn
+    \item\pause \mintinline{latex}|--| is een gewone lijn tussen twee punten
     \item\pause we konden ook \mintinline{latex}|\draw[blue] (0,0) -- (1.25,0.25);| gebruiken, maar nu kunnen we de co\"ordinaten herbruiken
   \end{enumerate}
   \pause
@@ -242,7 +265,7 @@
   \end{enumerate}
   \pause
   \begin{block}{Volgende stap}
-    We kunnen echter ook cirkels door punten tekenen, met de \texttt{through} library.
+    We kunnen echter ook meteen cirkels door punten tekenen.
   \end{block}
 \end{frame}
 
@@ -287,8 +310,8 @@
 
   \begin{enumerate} 
     \item we berekenen een \mintinline{latex}|\path| (= een reeks lijnsegmenten), dus in dit geval het (unieke) lijnstuk tussen de doorsnedes
-    \item we hebben de variabelen \texttt{intersection-1} en \texttt{intersection-2} die aangemaakt woren door de \texttt{intersections} library
-    \item we introduceren de naam \texttt{C} en tekenen twee lijnstukken
+    \item\pause we hebben de variabelen \texttt{intersection-1} en \texttt{intersection-2} die aangemaakt worden door de \texttt{intersections} library
+    \item\pause we introduceren de naam \texttt{C} en tekenen twee lijnstukken
   \end{enumerate}
 \end{frame}
 
@@ -328,11 +351,49 @@
   \frametitle{Euclides: het resultaat}
 
   \centering
-  \input{tikz/triangle/result.tikz}
+  \input{tikz/triangle/result-big.tikz}
 \end{frame}
 
 \begin{frame}
   \frametitle{Herhaling belangrijke commando's}
 \end{frame}
+
+
+\section{Commutatieve diagrammen}
+
+\begin{frame}
+  \frametitle{Uitbreidingen op \TikZ}
+
+  Zie \url{http://ctan.org/search?phrase=tikz}: 89 resultaten
+
+  \begin{description}
+    \item[\texttt{tikz-cd}]
+  \end{description}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Commutatieve diagrammen}
+
+  We gebruiken \mintinline{latex}|\usepackage{tikz-cd}|.
+
+  \begin{columns}
+    \begin{column}{.67\textwidth}
+      \inputminted[fontsize = \scriptsize]{latex}{tikz/diagrams/1.tikz}
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \input{tikz/diagrams/1.tikz}
+    \end{column}
+  \end{columns}
+  \begin{enumerate}
+    \item\pause \mintinline{latex}|\arrow| kan zowel 1 als 2 parameters hebben
+    \item\pause de \emph{eerste parameter} is altijd de richting, een combinatie van \texttt{u}, \texttt{d}, \texttt{r}, \texttt{l}, de \emph{tweede} een optioneel label
+    \item\pause we schrijven de vertices in het diagram zoals we tabellen zouden schrijven
+  \end{enumerate}
+  \begin{alertblock}{Opgepast}
+    \dbend Pijlen kunnen enkel naar bestaande vertices.
+  \end{alertblock}
+\end{frame}
+
+
 
 \end{document}
