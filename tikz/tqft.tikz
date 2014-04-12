@@ -1,0 +1,10 @@
+\begin{tikzpicture}[scale = .8]
+  \node[draw, tqft/pair of pants]
+    (a) {};
+  \node[draw, tqft/cylinder to next,
+        anchor = incoming boundary 1]
+    (c) at (a.outgoing boundary 1) {};
+  \node[draw, tqft/reverse pair of pants,
+        anchor = incoming boundary 1]
+    at (a.outgoing boundary 2) (b) {};
+\end{tikzpicture}

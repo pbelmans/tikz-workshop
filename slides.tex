@@ -7,6 +7,7 @@
 \usepackage{minted}
 \usepackage{pgfplots}
 \usepackage{tikz-cd}
+\usepackage{tqft}
 \usepackage{xspace}
 
 \pgfplotsset{width = 7cm, compat = 1.8}
@@ -358,18 +359,35 @@
   \frametitle{Herhaling belangrijke commando's}
 \end{frame}
 
-
-\section{Commutatieve diagrammen}
+\section{Uitbeidingen op TikZ}
 
 \begin{frame}
-  \frametitle{Uitbreidingen op \TikZ}
+  \frametitle{Een kort overzichtje}
 
-  Zie \url{http://ctan.org/search?phrase=tikz}: 89 resultaten
+  Zie \url{http://ctan.org/search?phrase=tikz}: 90+ resultaten
 
-  \begin{description}
-    \item[\texttt{tikz-cd}]
-  \end{description}
+  \begin{enumerate}
+    \item \texttt{tqft}
+    \item \ldots
+    \item \texttt{tikz-cd}
+  \end{enumerate}
 \end{frame}
+
+\begin{frame}
+  \frametitle{\texttt{tqft}}
+  
+  Om diagrammen in topologische quantumveldentheorie te tekenen:
+  \begin{columns}
+    \begin{column}{.6\textwidth}
+      \inputminted[fontsize = \scriptsize]{latex}{tikz/tqft.tikz}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      \input{tikz/tqft.tikz}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\section{Commutatieve diagrammen}
 
 \begin{frame}[fragile]
   \frametitle{Commutatieve diagrammen}
