@@ -1,0 +1,17 @@
+\begin{tikzpicture}[scale=.4]
+  \DrawRubikLayerFace{G}{Y}{R}
+                     {Y}{Y}{Y}
+                     {B}{Y}{Y}
+  \DrawRubikLayerSideT {Y}{B}{B}
+  \DrawRubikLayerSideLR{R}   {Y}
+                       {R}   {O}
+                       {Y}   {O}
+  \DrawRubikLayerSideB {O}{G}{G}
+  \draw[->,ultra thick,color=green]
+    (0.5,5) -- (0.5, 4);
+\end{tikzpicture}
+
+\begin{tikzpicture}[scale=.4]
+  \RubikCubeSolved
+  \DrawRubikCubeFlat
+\end{tikzpicture}
