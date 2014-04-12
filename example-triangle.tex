@@ -1,0 +1,271 @@
+\section{PGF/TikZ}
+
+\begin{frame}
+  \frametitle{Uitgewerkt voorbeeld: een gelijkzijdige driehoek}
+
+  In de \emph{Elementen van Euclides} (3e eeuw voor Christus) worden vele constructies in vlakke meetkunde beschreven. We gaan nu een voorbeeld uit de Ti\textit{k}Z manual bespreken:
+  \begin{quote}
+    Hoe construeren we een gelijkzijdige driehoek op een gegeven lijnstuk?
+  \end{quote}
+
+  \pause
+  \centering
+  \input{tikz/triangle/result.tikz}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Stappenplan}
+
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{enumerate}
+        \item de rechte $AB$
+        \item de cirkels rond $A$ en $B$
+        \item het snijpunt
+        \item de driehoek
+      \end{enumerate}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \centering
+      \input{tikz/triangle/result.tikz}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Euclides: de configuratie}
+  
+  \inputminted[fontsize = \scriptsize]{latex}{tikz/triangle/configuration.tikz}
+
+  \TikZ bevat vele libraries die bepaalde zaken gemakkelijker maken. In dit voorbeeld zullen we er vier gebruiken.
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Euclides: de rechte $AB$ (1)}
+
+  \begin{columns}
+    \begin{column}{.67\textwidth}
+      \inputminted[fontsize = \scriptsize]{latex}{tikz/triangle/1a.tikz}
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \input{tikz/triangle/1a.tikz}
+    \end{column}
+  \end{columns}
+
+  \small
+  \begin{enumerate}
+    \item\pause \mintinline{latex}|\draw| is het commando om iets te tekenen
+    \item\pause \mintinline{latex}|--| is een gewone lijn tussen twee punten
+    \item\pause we konden ook \mintinline{latex}|\draw[blue] (0,0) -- (1.25,0.25);| gebruiken, maar nu kunnen we de co\"ordinaten herbruiken
+  \end{enumerate}
+  \pause
+  \begin{block}{Volgende stap}
+    Hoe voegen we namen van punten toe?
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Euclides: de rechte $AB$ (2)}
+
+  \begin{columns}
+    \begin{column}{.67\textwidth}
+      \inputminted[fontsize = \scriptsize]{latex}{tikz/triangle/1b.tikz}
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \input{tikz/triangle/1b.tikz}
+    \end{column}
+  \end{columns}
+
+  \small
+  \begin{enumerate}
+    \item\pause we gebruiken puntkomma's voor het einde van een commando
+    \item\pause we mogen nieuwe regels beginnen als dat beter leest (of als de slides te smal zijn)
+  \end{enumerate}
+  \pause
+  \begin{block}{Volgende stap}
+    Hoe kunnen we $A$ en $B$ een willekeurige positie laten aannemen?
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Euclides: de rechte $AB$ (3)}
+
+  \begin{columns}
+    \begin{column}{.67\textwidth}
+      \inputminted[fontsize = \scriptsize]{latex}{tikz/triangle/1c.tikz}
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \input{tikz/triangle/1c.tikz}
+    \end{column}
+  \end{columns}
+
+  \small
+  \begin{enumerate}
+    \item\pause we kunnen dus berekeningen doen bij het bepalen van co\"ordinaten
+    \item\pause \texttt{rand} is een functie die een getal tussen $-1$ en $1$ teruggeeft
+  \end{enumerate}
+  \pause
+  \begin{block}{Volgende stap}
+    We hebben basispunten en een perturbatie, maar de syntax is een beetje onduidelijk.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Euclides: de rechte $AB$ (4)}
+
+  \begin{columns}
+    \begin{column}{.67\textwidth}
+      \inputminted[fontsize = \scriptsize]{latex}{tikz/triangle/1d.tikz}
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \input{tikz/triangle/1d.tikz}
+    \end{column}
+  \end{columns}
+
+  \small
+  \begin{enumerate}
+    \item\pause de library \texttt{calc} laat ons toe om heel flexibel met co\"ordinaten te rekenen: we gebruiken dollartekens om dit aan te duiden
+    \item\pause meestal is \texttt{calc} zelfs niet nodig (!)
+  \end{enumerate}
+  \pause
+  \begin{block}{Volgende stap}
+    Nu de cirkels.
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Euclides: de cirkels rond $A$ en $B$ (1)}
+
+  \begin{columns}
+    \begin{column}{.67\textwidth}
+      \inputminted[fontsize = \scriptsize]{latex}{tikz/triangle/2a.tikz}
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \input{tikz/triangle/2a.tikz}
+    \end{column}
+  \end{columns}
+
+  \small
+  \begin{enumerate}
+    \item\pause een cirkel tekenen
+      \mintinline{latex}|\draw (0,0) circle (1);|
+    \item\pause we berekenen de co\"ordinaten voor $B-A$ (\texttt{let \ldots\ in} is met variabelen werken)
+  \end{enumerate}
+  \pause
+  \begin{block}{Volgende stap}
+    Nu nog de tweede cirkel.
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Euclides: de cirkels rond $A$ en $B$ (2)}
+
+  \begin{columns}
+    \begin{column}{.67\textwidth}
+      \inputminted[fontsize = \scriptsize]{latex}{tikz/triangle/2b.tikz}
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \input{tikz/triangle/2b.tikz}
+    \end{column}
+  \end{columns}
+
+  \small
+  \begin{enumerate}
+    \item\pause \mintinline{latex}|\p1| zijn co\"ordinaten, \mintinline{latex}|\n1| is een getal
+    \item\pause \'e\'en \mintinline{latex}|\draw| kan meerdere zaken tekenen
+  \end{enumerate}
+  \pause
+  \begin{block}{Volgende stap}
+    We kunnen echter ook meteen cirkels door punten tekenen.
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Euclides: de cirkels rond $A$ en $B$ (3)}
+
+  \begin{columns}
+    \begin{column}{.67\textwidth}
+      \inputminted[fontsize = \scriptsize]{latex}{tikz/triangle/2c.tikz}
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \input{tikz/triangle/2c.tikz}
+    \end{column}
+  \end{columns}
+
+  \small
+  \begin{enumerate}
+    \item \mintinline{latex}|\node| is een combinatie van \mintinline{latex}|\coordinate| en \mintinline{latex}|\draw|
+    \item de lege accolades zouden gebruikt kunnen worden voor tekst
+  \end{enumerate}
+  \pause
+  \begin{block}{Volgende stap}
+    Het snijpunt bepalen.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Euclides: het snijpunt (1)}
+
+  \begin{columns}
+    \begin{column}{.67\textwidth}
+      \inputminted[fontsize = \scriptsize]{latex}{tikz/triangle/3a.tikz}
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \input{tikz/triangle/3a.tikz}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Euclides: het snijpunt (2)}
+
+  \begin{enumerate} 
+    \item we berekenen een \mintinline{latex}|\path| (= een reeks lijnsegmenten), dus in dit geval het (unieke) lijnstuk tussen de doorsnedes
+    \item\pause we hebben de variabelen \texttt{intersection-1} en \texttt{intersection-2} die aangemaakt worden door de \texttt{intersections} library
+    \item\pause we introduceren de naam \texttt{C} en tekenen twee lijnstukken
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Euclides: de driehoek}
+
+  \begin{columns}
+    \begin{column}{.67\textwidth}
+      \inputminted[fontsize = \scriptsize]{latex}{tikz/triangle/4a.tikz}
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \input{tikz/triangle/4a.tikz}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Euclides: perfectioneren}
+
+  \begin{enumerate}
+    \item we gebruiken variabelen voor de kleuren:
+      \begin{minted}{latex}
+\colorlet{input}{blue!80!black}
+\colorlet{triangle}{orange!80!white}
+\colorlet{output}{red!70!black}
+      \end{minted}
+      (en passen de code aan)
+    \item\pause we tekenen onze punten:
+      \begin{minted}{latex}
+\foreach \point in {A,B,C}
+  \fill [black,opacity=.5] (\point) circle (2pt);
+      \end{minted}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Euclides: het resultaat}
+
+  \centering
+  \input{tikz/triangle/result-big.tikz}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Herhaling belangrijke commando's}
+\end{frame}
+

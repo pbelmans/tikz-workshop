@@ -1,0 +1,67 @@
+\section{Uitbeidingen op TikZ}
+
+\begin{frame}
+  \frametitle{Een kort overzichtje}
+
+  Zie \url{http://ctan.org/search?phrase=tikz}: 90+ resultaten
+
+  \begin{enumerate}
+    \item \texttt{tikz-qtree}
+    \item \texttt{tqft}
+    \item \texttt{tikz-cd}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{\texttt{tikz-qtree}}
+  
+  Automatisch bomen tekenen:
+  \begin{columns}
+    \begin{column}{.6\textwidth}
+      \inputminted[fontsize = \scriptsize]{latex}{tikz/tikz-qtree.tikz}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      \input{tikz/tikz-qtree.tikz}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{\texttt{tqft}}
+  
+  Om diagrammen in topologische quantumveldentheorie te tekenen:
+  \begin{columns}
+    \begin{column}{.6\textwidth}
+      \inputminted[fontsize = \scriptsize]{latex}{tikz/tqft.tikz}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      \input{tikz/tqft.tikz}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\section{Commutatieve diagrammen}
+
+\begin{frame}[fragile]
+  \frametitle{Commutatieve diagrammen}
+
+  \small
+  We gebruiken \mintinline{latex}|\usepackage{tikz-cd}|.
+  \begin{columns}
+    \begin{column}{.67\textwidth}
+      \inputminted[fontsize = \scriptsize]{latex}{tikz/diagrams/1.tikz}
+    \end{column}
+    \begin{column}{.33\textwidth}
+      \input{tikz/diagrams/1.tikz}
+    \end{column}
+  \end{columns}
+  \small
+  \begin{enumerate}
+    \item\pause de \emph{eerste parameter} van \mintinline{latex}|\arrow| is altijd de richting: een combinatie van \texttt{u}, \texttt{d}, \texttt{r}, \texttt{l}, de \emph{tweede} een (optioneel) label
+    \item\pause vertices zoals we tabellen schrijven 
+  \end{enumerate}
+  \begin{alertblock}{Opgepast}
+    \dbend\quad Pijlen kunnen enkel naar bestaande vertices.
+  \end{alertblock}
+\end{frame}
+
