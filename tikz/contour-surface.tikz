@@ -1,0 +1,47 @@
+\begin{tikzpicture}[scale = .5]
+  \begin{axis}[
+    colormap name=whitered,
+    3d box,
+    width=15cm,
+    view={25}{25},
+    enlargelimits=false,
+    grid=major,
+    domain=-0.5:4.7,
+    y domain=-2:2,
+    samples=21,
+    xlabel=$x$,
+    ylabel=$\dot{x}$,
+    zlabel={$\text{E}_{\text{m}}$},
+    colorbar,
+    colorbar style={
+        at={(1,0)},
+        anchor=south west,
+        height=0.1*\pgfkeysvalueof{/pgfplots/parent axis height},
+        title={$\text{E}_{\text{m}}(x,\dot{x})$}
+        },
+    colormap={whitered}{color(0cm)=(white); color(1cm)=(orange!75!red)}
+    ]
+    \addplot3 [y domain = 0:2, surf]
+      {-0.7+4*exp(-0.5*(x+3))*(3*cos(4*x*180/pi)+2.5*cos(2*x*180/pi))
+       + 0.5*y*y*4};
+
+    \addplot3 [y domain = 0:2, contour gnuplot = {number=14, labels={false},
+      draw color = ugentblue}, samples = 21, ]
+      {-0.7+4*exp(-0.5*(x+3))*(3*cos(4*x*180/pi)+2.5*cos(2*x*180/pi))
+       + 0.5*y*y*4};
+
+    \addplot3 [domain = -0.5:4.7, samples = 31, samples y = 0, thick, smooth]
+        (x,-2,{-0.6+4*exp(-0.5*(x+3))*(3*cos(4*x*180/pi)+2.5*cos(2*x*180/pi))});
+    \addplot3 [contour gnuplot = {number=14, labels={false}, draw color=ugentblue},
+        samples=21,z filter/.code={\def\pgfmathresult{20}}]
+        {-0.7+4*exp(-0.5*(x+3))*(3*cos(4*x*180/pi)+2.5*cos(2*x*180/pi))
+         + 0.5*y*y*4};
+    \addplot3 [y domain=-2:0,surf]
+        {-0.7+4*exp(-0.5*(x+3))*(3*cos(4*x*180/pi)+2.5*cos(2*x*180/pi))
+         + 0.5*y*y*4};
+    \addplot3 [domain = 0:.25, contour gnuplot = {number=14,labels={false},
+        draw color=ugentblue}, samples=21]
+        {-0.7+4*exp(-0.5*(x+3))*(3*cos(4*x*180/pi)+2.5*cos(2*x*180/pi))
+         + 0.5*y*y*4};
+  \end{axis}
+\end{tikzpicture}
