@@ -1,5 +1,54 @@
 \begin{frame}
-  \frametitle{Inleiding}
+  \frametitle{Waarom figuren maken in \LaTeX?}
+
+  \begin{itemize}
+    \item[+] aanpasbaarheid
+      \begin{enumerate}
+        \item je document opnieuw builden maakt de afbeelding opnieuw: wijzigingen aanbrengen is dus even gemakkelijk als \LaTeX-code wijzigen
+        \item je hebt geen externe software nodig (!)
+      \end{enumerate}
+    \item[+] consistentie
+      \begin{enumerate}
+        \item lettertypes, kleuren, tekstgroottes, \ldots zijn overal hetzelfde
+      \end{enumerate}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Waarom figuren maken in \TikZ?}
+  \begin{exampleblock}{}
+    \mintinline{latex}|Making Greek letters is as easy as $\pi$.|
+
+    Making Greek letters is as easy as $\pi$. 
+    \vskip5mm
+    \hspace*\fill{---Leslie Lamport, \LaTeX: A Document Preparation System}
+  \end{exampleblock}
+  \pause
+  \begin{exampleblock}{}
+    \mintinline{latex}|Drawing an orange circle is as easy as|
+    \mintinline{latex}|\tikz \fill[orange] (1ex,1ex) circle (1ex);.|
+
+    Drawing an orange circle is as easy as \tikz \fill[orange] (1ex,1ex) circle (1ex);.
+    \vskip5mm
+    \hspace*\fill{---Pieter Belmans}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Wat is \TikZ?}
+
+  \TikZ is een recursief acroniem voor
+  \begin{center}
+    \TikZ ist \emph{kein} Zeichenprogramm
+  \end{center}
+  \pause
+  Dit betekent vooral dat \TikZ niet bedoeld is om in te tekenen zoals in Paint, maar om ``vector graphics'' te produceren. Het is een tekentaal, geprogrammeerd in \LaTeX.
+  \pause
+  Eigenlijk is \TikZ een frontend voor PGF, Portable Graphics Format, soms wordt de combinatie PGF/\TikZ genoemd.
+  \pause
+  \begin{block}{Versies}
+    Enkele maanden geleden is versie 3 uitgekomen, maar deze workshop is nog geschreven in 2.10 (de versie die ge\"installeerd is).
+  \end{block}
 \end{frame}
 
 \begin{frame}
@@ -24,3 +73,4 @@
   \end{enumerate}
   Ik wil dus vooral laten zien \emph{wat} er mogelijk is, niet \emph{hoe} je het moet doen. Daarvoor dienen handleidingen en de vele beschikbare voorbeelden.
 \end{frame}
+
