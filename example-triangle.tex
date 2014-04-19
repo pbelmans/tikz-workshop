@@ -266,6 +266,25 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Herhaling belangrijke commando's}
+  \frametitle{Herhaling belangrijke zaken}
+
+  \begin{enumerate}
+    \item \mintinline{latex}|\draw| (eigenlijk \mintinline{latex}|\path[draw]|) om zaken te tekenen
+    \item \mintinline{latex}|\coordinate| om co\"ordinaten op te slaan
+    \item een lijn tekenen: \mintinline{latex}|\draw (0,0) -- (0,1);|
+    \item een label toevoegen: \mintinline{latex}|\draw (0,0) -- (0,1) node {$f$};|
+    \item opvullen: \mintinline{latex}|\draw[fill]|
+    \item een cirkel: \mintinline{latex}|\draw (0,0) circle (2cm);|
+  \end{enumerate}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Oefening}
+
+  \centering
+  \begin{tikzpicture}
+    \draw[thick, ->] (0,0) node [below] {$0$} -- (1,0) node [above] {$1$};
+    \draw[thick, <->] (0,1) node [left] {$a$} to node[above]{$f$} (2,1) node [right] {$b$};
+    \draw[fill] (2,2) circle (2pt);
+  \end{tikzpicture}
+\end{frame}
