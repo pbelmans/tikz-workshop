@@ -31,3 +31,6 @@
 *.snm
 *.nav
 *.vrb
+*.dat
+*.script
+*.table
