@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+  \begin{axis}[
+    grid=major,
+    xlabel=$x$,
+    ylabel=$y$
+  ]
+    \addplot table[x = x, y = f]
+      {tikz/pgfplots/data.dat};
+    \addlegendentry{$x^2-x+4$};
+    \addplot table[x = x, y = g]
+      {tikz/pgfplots/data.dat};
+    \addlegendentry{$0.5x^2-3x+3$};
+  \end{axis}
+\end{tikzpicture}
