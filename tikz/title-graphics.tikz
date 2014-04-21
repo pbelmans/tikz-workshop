@@ -1,15 +1,25 @@
-\tikzstyle{level 1}=[sibling angle=120]
-\tikzstyle{level 2}=[sibling angle=60]
-\tikzstyle{level 3}=[sibling angle=30]
-\tikzstyle{every node}=[fill]
-\tikzstyle{edge from parent}=[snake=expanding waves,segment length=1mm,
-                              segment angle=10,draw]
-\begin{tikzpicture}[grow cyclic,shape=circle,very thick,level distance=13mm,
-                    cap=round,scale=.8]
-\node {} child [color=\A] foreach \A in {red,green,blue}
-    { node {} child [color=\A!50!\B] foreach \B in {red,green,blue}
-        { node {} child [color=\A!50!\B!50!\C] foreach \C in {black,gray,white}
-            { node {} }
-        }
-    };
+\resizebox{7cm}{!}{%
+
+\begin{tikzpicture}
+  \path[mindmap,concept color=black,text=white]
+    node[concept] {Computer Science}
+    [clockwise from=0]
+    child[concept color=green!50!black] {
+      node[concept] {practical}
+      [clockwise from=90]
+      child { node[concept] {algorithms} }
+      child { node[concept] {data structures} }
+      child { node[concept] {pro\-gramming languages} }
+      child { node[concept] {software engineer\-ing} }
+    }  
+    child[concept color=blue] {
+      node[concept] {applied}
+      [clockwise from=-30]
+      child { node[concept] {databases} }
+      child { node[concept] {WWW} }
+    }
+    child[concept color=red] { node[concept] {technical} }
+    child[concept color=orange] { node[concept] {theoretical} };
 \end{tikzpicture}
+
+}
