@@ -1,0 +1,11 @@
+\begin{equation*}
+  \begin{tikzcd}
+    T
+    \arrow{drr}{x}
+    \arrow[swap]{ddr}{y}
+    \arrow[dotted]{dr}[description]{\exists} & & \\
+      & X \times_Z Y \arrow[swap]{r}{p} \arrow{d}{q}
+        & X \arrow{d}{f} \\
+      & Y \arrow[swap]{r}{g} &Z
+  \end{tikzcd}
+\end{equation*}

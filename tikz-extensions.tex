@@ -1,14 +1,46 @@
 \section{Uitbeidingen op TikZ}
 
 \begin{frame}
-  \frametitle{Een kort overzichtje}
+  \frametitle{Libraries}
 
-  Zie \url{http://ctan.org/search?phrase=tikz}: 90+ resultaten
+  Zie \S IV in versie 2.10, of \S V in versie 3.0 voor de \emph{libraries} (= intern).
 
+  \pause
+  Te gebruiken via:
+  
+  \mintinline{latex}|\usetikzlibrary{lindenmayersystems}|
+
+  \begin{alertblock}{Vraag}
+    Wat doet deze library?
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Lindenmayersystemen}
+
+  \begin{columns}
+    \begin{column}{.6\textwidth}
+      \inputminted[fontsize = \scriptsize]{latex}{tikz/l-system.tikz}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      \input{tikz/l-system.tikz}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Packages}
+
+  Zie \url{http://ctan.org/search?phrase=tikz} voor \emph{packages} (= extern): 90+ resultaten
+
+  \mintinline{latex}|\usepackage{...}|
+
+  \pause
   \begin{enumerate}
     \item \texttt{tikz-qtree}
     \item \texttt{tqft}
     \item \texttt{tikz-cd}
+    \item \ldots
   \end{enumerate}
 \end{frame}
 
@@ -54,7 +86,7 @@
   \end{columns}
 \end{frame}
 
-\section{Commutatieve diagrammen}
+\subsection{Commutatieve diagrammen}
 
 \begin{frame}[fragile]
   \frametitle{Commutatieve diagrammen}
@@ -79,3 +111,10 @@
   \end{alertblock}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Oefening}
+
+  \footnotesize
+  \input{tikz/diagrams/2.tikz}
+  \input{tikz/diagrams/3.tikz}
+\end{frame}

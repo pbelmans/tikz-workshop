@@ -1,0 +1,6 @@
+\begin{equation*}
+  \begin{tikzcd}
+    A  \arrow{r}{f} \arrow{d}{l} & B \arrow{r}{g} \arrow{d}{m} & C \arrow{r}{h} \arrow{d}{n} & D \arrow{r}{j} \arrow{d}{p} & E \arrow{d}{q} \\
+    A' \arrow[swap]{r}{r}        & B' \arrow[swap]{r}{s}       & C' \arrow[swap]{r}{t}       & D' \arrow[swap]{r}{u}       & E' \\
+  \end{tikzcd}
+\end{equation*}

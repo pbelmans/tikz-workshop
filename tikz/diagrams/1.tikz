@@ -1,6 +1,6 @@
-\begin{equation}
+\begin{equation*}
   \begin{tikzcd}
     A \arrow{rd} \arrow{r}{\phi} & B \\
                                  & C
   \end{tikzcd}
-\end{equation}
+\end{equation*}
