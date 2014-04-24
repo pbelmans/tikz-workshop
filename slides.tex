@@ -1,6 +1,10 @@
 \documentclass[]{beamer}
 \usetheme[framenumber,totalframenumber]{UniversiteitGent}
 
+\AtBeginSection{\frame{\sectionpage}}
+\newtranslation[to=dutch]{Section}{Deel}
+
+\usepackage[dutch]{babel}
 \usepackage{luacode}
 \usepackage{manfnt}
 \usepackage{minted}
@@ -20,9 +24,18 @@
 
 \def\Point{36.9}
 
-%\includeonly{example-pgfplots}
+%\includeonly{tikz-extensions}
+
+\title{Workshop: \TikZ}
+\subtitle{PRIME}
+\author{Pieter Belmans \\ Universiteit Antwerpen}
+\date{24 april 2014}
 
 \begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
 
 \include{introduction}
 
