@@ -1,7 +1,7 @@
 \begin{tikzpicture}
-  \coordinate [label=left:\textcolor{blue}{$A$}]
+  \coordinate[label=left:\textcolor{blue}{$A$}]
     (A) at (0+0.1*rand,0+0.1*rand);
-  \coordinate [label=right:\textcolor{blue}{$B$}]
+  \coordinate[label=right:\textcolor{blue}{$B$}]
     (B) at (1.25+0.1*rand,0.25+0.1*rand);
 
   \draw[blue] (A) -- (B);

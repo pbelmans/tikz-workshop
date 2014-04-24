@@ -1,6 +1,6 @@
 \begin{tikzpicture}
-  \coordinate [label=left:$A$]  (A) at (0,0);
-  \coordinate [label=right:$B$] (B) at (1.25,0.25);
+  \coordinate[label=left:$A$]  (A) at (0,0);
+  \coordinate[label=right:$B$] (B) at (1.25,0.25);
   \draw (A) -- (B);
 
   \node (D) [name path=D,draw,circle through=(B),
@@ -8,12 +8,12 @@
   \node (E) [name path=E,draw,circle through=(A),
              label=right:$E$] at (B) {};
 
-  \path [name intersections={of=D and E}];
+  \path[name intersections={of=D and E}];
 
-  \coordinate [label=above:$C$] (C) at (intersection-1);
+  \coordinate[label=above:$C$] (C) at (intersection-1);
 
-  \draw [red] (A) -- (C);
-  \draw [red] (B) -- (C);
+  \draw[red] (A) -- (C);
+  \draw[red] (B) -- (C);
 
-  \draw [orange, fill] (A) -- (B) -- (C) -- cycle;
+  \draw[orange, fill] (A) -- (B) -- (C) -- cycle;
 \end{tikzpicture}

@@ -1,6 +1,6 @@
 \begin{tikzpicture}
-  \coordinate [label=left:$A$]  (A) at (0,0);
-  \coordinate [label=right:$B$] (B) at (1.25,0.25);
+  \coordinate[label=left:$A$]  (A) at (0,0);
+  \coordinate[label=right:$B$] (B) at (1.25,0.25);
   \draw (A) -- (B);
 
   \draw let \p1 = ($ (B) - (A) $),

@@ -1,4 +1,4 @@
-\section{PGF/TikZ}
+\section{PGF/TikZ aan de hand van een voorbeeld}
 
 \begin{frame}
   \frametitle{Uitgewerkt voorbeeld: een gelijkzijdige driehoek}
@@ -19,7 +19,7 @@
   \begin{columns}
     \begin{column}{.5\textwidth}
       \begin{enumerate}
-        \item de rechte $AB$
+        \item het lijnstuk $AB$
         \item de cirkels rond $A$ en $B$
         \item het snijpunt
         \item de driehoek
@@ -41,7 +41,7 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Euclides: de rechte $AB$ (1)}
+  \frametitle{Euclides: het lijnstuk $AB$ (1)}
 
   \begin{columns}
     \begin{column}{.67\textwidth}
@@ -52,7 +52,7 @@
     \end{column}
   \end{columns}
 
-  \small
+  \footnotesize
   \begin{enumerate}
     \item\pause \mintinline{latex}|\draw| is het commando om iets te tekenen
     \item\pause \mintinline{latex}|--| is een gewone lijn tussen twee punten
@@ -65,7 +65,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Euclides: de rechte $AB$ (2)}
+  \frametitle{Euclides: het lijnstuk $AB$ (2)}
 
   \begin{columns}
     \begin{column}{.67\textwidth}
@@ -76,7 +76,7 @@
     \end{column}
   \end{columns}
 
-  \small
+  \footnotesize
   \begin{enumerate}
     \item\pause we gebruiken puntkomma's voor het einde van een commando
     \item\pause we mogen nieuwe regels beginnen als dat beter leest (of als de slides te smal zijn)
@@ -88,7 +88,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Euclides: de rechte $AB$ (3)}
+  \frametitle{Euclides: het lijnstuk $AB$ (3)}
 
   \begin{columns}
     \begin{column}{.67\textwidth}
@@ -99,7 +99,7 @@
     \end{column}
   \end{columns}
 
-  \small
+  \footnotesize
   \begin{enumerate}
     \item\pause we kunnen dus berekeningen doen bij het bepalen van co\"ordinaten
     \item\pause \texttt{rand} is een functie die een getal tussen $-1$ en $1$ teruggeeft
@@ -111,7 +111,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Euclides: de rechte $AB$ (4)}
+  \frametitle{Euclides: het lijnstuk $AB$ (4)}
 
   \begin{columns}
     \begin{column}{.67\textwidth}
@@ -122,7 +122,7 @@
     \end{column}
   \end{columns}
 
-  \small
+  \footnotesize
   \begin{enumerate}
     \item\pause de library \texttt{calc} laat ons toe om heel flexibel met co\"ordinaten te rekenen: we gebruiken dollartekens om dit aan te duiden
     \item\pause meestal is \texttt{calc} zelfs niet nodig (!)
@@ -145,7 +145,7 @@
     \end{column}
   \end{columns}
 
-  \small
+  \footnotesize
   \begin{enumerate}
     \item\pause een cirkel tekenen
       \mintinline{latex}|\draw (0,0) circle (1);|
@@ -169,7 +169,7 @@
     \end{column}
   \end{columns}
 
-  \small
+  \footnotesize
   \begin{enumerate}
     \item\pause \mintinline{latex}|\p1| zijn co\"ordinaten, \mintinline{latex}|\n1| is een getal
     \item\pause \'e\'en \mintinline{latex}|\draw| kan meerdere zaken tekenen
@@ -192,7 +192,7 @@
     \end{column}
   \end{columns}
 
-  \small
+  \footnotesize
   \begin{enumerate}
     \item \mintinline{latex}|\node| is een combinatie van \mintinline{latex}|\coordinate| en \mintinline{latex}|\draw|
     \item de lege accolades zouden gebruikt kunnen worden voor tekst
@@ -287,4 +287,22 @@
     \draw[thick, <->] (0,1) node [left] {$a$} to node[above]{$f$} (2,1) node [right] {$b$};
     \draw[fill] (2,2) circle (2pt);
   \end{tikzpicture}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Oplossing}
+
+  \begin{minted}{latex}
+\begin{tikzpicture}
+  \draw[thick, ->]
+    (0,0) node[below] {$0$}
+    --
+    (1,0) node[above] {$1$};
+  \draw[thick, <->]
+    (0,1) node[left] {$a$}
+    to node[above]{$f$}
+    (2,1) node[right] {$b$};
+  \draw[fill] (2,2) circle (2pt);
+\end{tikzpicture}
+  \end{minted}
 \end{frame}
