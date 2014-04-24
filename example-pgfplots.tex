@@ -1,6 +1,14 @@
+\section{\texttt{pgfplots} aan de hand van voorbeelden}
+
 \begin{frame}
   \frametitle{\texttt{pgfplots}}
 
+  Net zoals \TikZ een frontend is voor PGF, en vooral bedoeld om tekeningen te maken, is \texttt{pgfplots} een frontend om plots te maken.
+
+  \begin{enumerate}
+    \item \url{http://pgfplots.net}
+    \item \url{http://pgfplots.sourceforge.net/gallery.html}
+  \end{enumerate}
 \end{frame}
 
 \begin{frame}
@@ -53,3 +61,20 @@
   \small\url{http:/pgfplots.net/tikz/examples/weierstrass-function/}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Integratie met externe tools}
+
+  \begin{description}
+    \item[\texttt{matlab2tikz}] \url{https://github.com/nschloe/matlab2tikz}
+      exporteer Matlab-figuren meteen naar \TikZ
+    \pause
+    \item[\texttt{matplotlib2tikz}] \url{https://github.com/nschloe/matplotlib2tikz}
+      exporteer matplotlib-figuren meteen naar \TikZ
+
+      \begin{block}{SAGE}
+        matplotlib is de library die gebruikt wordt in SAGE om figuren te plotten
+      \end{block}
+    \pause
+    \item[\texttt{sagetex}] niet per se voor plots, maar wel erg handig
+  \end{description}
+\end{frame}
